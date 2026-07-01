@@ -1,1 +1,210 @@
-#index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Webpage 🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ffd6e8,#ffe8cc,#d6f5ff);
+    position:relative;
+}
+
+/* Floating Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.5),transparent 25%),
+    radial-gradient(circle at 80% 40%,rgba(255,255,255,.35),transparent 20%),
+    radial-gradient(circle at 40% 80%,rgba(255,255,255,.4),transparent 25%);
+    animation:moveBg 12s linear infinite alternate;
+}
+
+.container{
+    position:relative;
+    z-index:10;
+}
+
+.card{
+    width:430px;
+    padding:40px;
+    text-align:center;
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+    animation:floatCard 4s ease-in-out infinite;
+}
+
+.card h1{
+    font-size:40px;
+    color:#ff4d88;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+button{
+    border:none;
+    outline:none;
+    padding:14px 35px;
+    font-size:16px;
+    color:white;
+    cursor:pointer;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff5e9c,#ff8fb1);
+    box-shadow:0 10px 25px rgba(255,94,156,.35);
+    transition:.35s;
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.08);
+    box-shadow:0 15px 35px rgba(255,94,156,.5);
+}
+
+/* Floating Emojis */
+.hearts span{
+    position:absolute;
+    top:-80px;
+    font-size:32px;
+    animation:fall linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:8%;
+    animation-duration:8s;
+}
+
+.hearts span:nth-child(2){
+    left:22%;
+    animation-duration:10s;
+    animation-delay:2s;
+}
+
+.hearts span:nth-child(3){
+    left:40%;
+    animation-duration:7s;
+}
+
+.hearts span:nth-child(4){
+    left:60%;
+    animation-duration:9s;
+    animation-delay:1s;
+}
+
+.hearts span:nth-child(5){
+    left:78%;
+    animation-duration:11s;
+}
+
+.hearts span:nth-child(6){
+    left:92%;
+    animation-duration:8.5s;
+}
+
+/* Animations */
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px) rotate(0deg);
+    }
+    to{
+        transform:translateY(120vh) rotate(360deg);
+    }
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes moveBg{
+    from{
+        transform:translateX(-20px);
+    }
+    to{
+        transform:translateX(20px);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.card{
+    width:90%;
+    padding:30px;
+}
+
+.card h1{
+    font-size:30px;
+}
+
+button{
+    width:100%;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="hearts">
+    <span>💖</span>
+    <span>🌸</span>
+    <span>✨</span>
+    <span>🧸</span>
+    <span>💕</span>
+    <span>🌷</span>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h1>Welcome! 🌸</h1>
+
+        <p>
+            Welcome to this little corner of happiness! ✨<br><br>
+            May your day be filled with smiles, positive vibes, and endless joy.
+            Thank you for visiting this cute webpage. 💖
+        </p>
+
+        <button onclick="showLove()">
+            Click Me 💕
+        </button>
+    </div>
+</div>
+
+<script>
+function showLove(){
+    alert("🌸 Thank you for visiting! Have a wonderful day! 💖");
+}
+</script>
+
+</body>
+</html>
